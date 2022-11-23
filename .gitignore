@@ -33,6 +33,7 @@ migrate_working_dir/
 /build/
 /macos/
 /test/
+/ios/
 web/
 windows/
 linux/
