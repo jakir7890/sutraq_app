@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:squrart_app/constants.dart';
 import 'package:squrart_app/size_config.dart';
+import 'package:squrart_app/views/login_screen/login.dart';
 import 'package:squrart_app/widgets/button.dart';
 import './content.dart';
 
@@ -13,27 +14,6 @@ class OnboardingBody extends StatefulWidget {
 
 class _OnboardingBodyState extends State<OnboardingBody> {
   int currentIndex = 0;
-
-  List<Map<String, String>> onboardinData = [
-    {
-      "image": 'assets/images/1st.png',
-      'title': 'Send Money Anywhere',
-      'subtitle':
-          'With our unique technology, you can get money anywhere in the world',
-    },
-    {
-      "image": 'assets/images/2nd.png',
-      'title': 'Safe & Secured',
-      'subtitle':
-          'Safety of your funds is guranteed, We\'ve got you coverd 24/7.',
-    },
-    {
-      "image": 'assets/images/3rd.png',
-      'title': 'Unbeatable Support',
-      'subtitle':
-          'Send money to other squart users free of chage, with no aditional fee.',
-    }
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +67,15 @@ class _OnboardingBodyState extends State<OnboardingBody> {
                             Spacer(
                               flex: 2,
                             ),
-                            Button(),
+                            Button(
+                              onpress: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => LoginScreen(),
+                                    ));
+                              },
+                            ),
                             Text('TRY SUTRAQ',
                                 style: TextStyle(
                                     fontSize: getProportionateScrenWidth(18),

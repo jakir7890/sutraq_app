@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'views/home_screen/home_screen.dart';
+import 'package:squrart_app/views/onboarding/onboarding.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: Onboarding(),
     );
   }
 }

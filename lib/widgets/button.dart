@@ -3,7 +3,9 @@ import 'package:squrart_app/constants.dart';
 import '../size_config.dart';
 
 class Button extends StatelessWidget {
-  const Button({super.key});
+   Button({super.key, required this.onpress, this.buttonColor =  AppColors.kbuttonColor});
+   VoidCallback onpress;
+   Color buttonColor ;
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +16,8 @@ class Button extends StatelessWidget {
         height: getProportionateScreenHeight(60),
         child: MaterialButton(
             textColor: AppColors.white,
-            color: AppColors.kbuttonColor,
-            onPressed: () {},
+            color: buttonColor,
+            onPressed: onpress,
             child: Text(
               "LOGIN",
               style: TextStyle(fontSize: getProportionateScrenWidth(20)),
