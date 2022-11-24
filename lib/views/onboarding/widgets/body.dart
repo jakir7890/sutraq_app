@@ -67,15 +67,20 @@ class _OnboardingBodyState extends State<OnboardingBody> {
                             Spacer(
                               flex: 2,
                             ),
-                            Button(
-                              onpress: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => LoginScreen(),
-                                    ));
-                              },
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 15),
+                              child: Button(
+                                onpress: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => LoginScreen(),
+                                      ));
+                                },
+                              ),
                             ),
+                            divider,
                             Text('TRY SUTRAQ',
                                 style: TextStyle(
                                     fontSize: getProportionateScrenWidth(18),

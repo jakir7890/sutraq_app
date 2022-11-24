@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:squrart_app/size_config.dart';
+import 'package:squrart_app/views/forget_password/forget_password.dart';
+import 'package:squrart_app/views/tip_screen/tip_screen.dart';
 import 'package:squrart_app/widgets/button.dart';
 import 'package:squrart_app/widgets/textfield.dart';
 import '../../constants.dart';
@@ -48,10 +50,9 @@ class LoginContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
       child: Column(
         children: [
-          space,
+          SizedBox(height: 20),
           Image.asset(
             logo,
             width: getProportionateScreenHeight(80),
@@ -60,14 +61,14 @@ class LoginContent extends StatelessWidget {
           Text(
             logintext[0],
             style: TextStyle(
-                fontSize: getProportionateScrenWidth(36),
+                fontSize: getProportionateScrenWidth(32),
                 fontWeight: FontWeight.bold),
           ),
           Text(
             logintext[1],
             style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: getProportionateScrenWidth(18)),
+                fontSize: getProportionateScrenWidth(16)),
           ),
           space,
           Align(
@@ -80,7 +81,7 @@ class LoginContent extends StatelessWidget {
           ),
           divider,
           MyTextField(
-            prefixIcon: Icon(Icons.email),
+            prefixIcon: Icon(Icons.email, color: AppColors.kprimaryColor),
             hintText: logintext[3],
           ),
           space = SizedBox(
@@ -96,23 +97,38 @@ class LoginContent extends StatelessWidget {
           ),
           divider,
           MyTextField(
-            prefixIcon: Icon(Icons.lock),
-            suffixIcon: Icon(Icons.visibility),
+            prefixIcon: Icon(Icons.lock, color: AppColors.kprimaryColor),
+            suffixIcon: Icon(
+              Icons.visibility,
+              color: AppColors.kprimaryColor,
+            ),
             hintText: logintext[5],
           ),
           divider,
           Align(
             alignment: Alignment.centerRight,
-            child: Text(logintext[6],
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: AppColors.kprimaryColor,
-                    fontSize: getProportionateScrenWidth(14))),
+            child: TextButton(
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ForgetPassword(),
+                    )),
+                child: Text(logintext[6],
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        color: AppColors.kprimaryColor,
+                        fontSize: getProportionateScrenWidth(14)))),
           ),
           space,
           Button(
             buttonColor: AppColors.kprimaryColor,
-            onpress: () {},
+            onpress: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TipScreen(),
+                  ));
+            },
           ),
           SizedBox(
             height: getProportionateScreenHeight(20),

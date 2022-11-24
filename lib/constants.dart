@@ -37,7 +37,7 @@ const List<Map<String, String>> onboardinData = [
 
 const String fingerPrint = 'assets/icons/finger-print.png';
 
-const Widget divider = Divider(
+ Widget divider = Divider(
   endIndent: 0,
   indent: 0,
   height: 10,
